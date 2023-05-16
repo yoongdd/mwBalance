@@ -1,0 +1,1146 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1 - Main Container
+2 - Header Styles
+3 - Slider Section Styles
+4 - Reservation List Style
+5 - Fix Bottom Style
+6 - Reservation Detail Top Style
+7 - Reservation Detail List Style
+8 - Login Style
+9 - Tab Section
+10 - Ticket Info Page
+11- My Info Page
+12 - My Info Footer Style
+13 - Profile Page Style
+-------------------------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+/*----------------------1 - Main Container -----------------------------------*/
+
+body {
+  font-family: "Montserrat", sans-serif, "Noto Sans KR", sans-serif !important;
+  align-items: center;
+}
+
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  background-color: #ffffff;
+
+  flex: 1;
+  overflow-y: auto;
+  padding: 50px 16px;
+}
+
+input,
+textarea,
+select,
+button {
+  max-height: 100%;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ----------------------------------
+    2 - Header Styles
+-----------------------------------*/
+
+header {
+  margin: 0 auto;
+  position: fixed;
+  /* 헤더를 고정 */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* 헤더의 높이 */
+  background-color: #ffffff; /* 헤더의 배경색 */
+  z-index: 999; /* 다른 요소들보다 위에 표시되도록 설정 */
+  transition: background-color 0.3s ease-in-out; /* 배경색 변경 애니메이션 추가 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header.fixed {
+  background-color: #f8f8f8; /* 헤더가 고정될 때의 배경색 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+header .toolbar-container {
+  max-width: 390px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header .header-title {
+  max-width: 390px;
+}
+
+header .toolbar-container img {
+  height: 30px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+header .toolbar-container .header-title {
+  height: 30px;
+  margin: 0 auto;
+  padding-top: 15px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  max-width: 390px;
+}
+
+header .toolbar-container .header-icon {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+}
+
+/* ----------------------------------
+    3 - Slider Section Styles
+-----------------------------------*/
+
+.slider-container {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ----------------------------------
+    4 - Reservation List Style
+-----------------------------------*/
+
+.my-rv {
+  position: relative;
+  flex-grow: 1;
+  padding-bottom: 40px;
+}
+
+.my-rv .my-rv-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem 0 1rem;
+}
+
+.page-title {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-weight: 400;
+  color: #68686c;
+  text-align: left;
+}
+
+.page-title span {
+  font-size: 1.3125rem;
+  line-height: 1.6875rem;
+  font-weight: 600;
+  color: #161616;
+}
+
+.button-inner {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.rv-item {
+  border-bottom: 1px solid #e6e6ed;
+  padding: 1.25rem 1rem;
+}
+
+.rv-item .item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.rv-item .item-top .time {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #3e3e40;
+}
+
+.rv-item .item-top .wait-chip {
+  min-width: 4.0625rem;
+  height: 1.5rem;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+
+.rv-item .wait-chip p {
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1;
+  margin: 0;
+}
+
+.rv-item .gray-card {
+  background: #f6f6f6;
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+.rv-item .gray-card .class-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #3e3e40;
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+
+.rv-item .gray-card .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rv-item .gray-card .rv-info {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+.rv-item .gray-card .bottom .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+
+.rv-item .gray-card .manager {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #3e3e40;
+}
+
+.rv-item .gray-card .profile {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.rv-item .gray-card .profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rv-item .gray-card .manager {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+/* ----------------------------------
+    5 - Fix Bottom Style
+-----------------------------------*/
+
+bottom {
+  position: fixed; /* 헤더를 고정 */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* 헤더의 높이 */
+  background-color: #f0f2f5; /* 헤더의 배경색 */
+  z-index: 999; /* 다른 요소들보다 위에 표시되도록 설정 */
+  transition: background-color 0.3s ease; /* 배경색 변경 애니메이션 추가 */
+}
+
+bottom.fixed {
+  background-color: #f0f2f5; /* 헤더가 고정될 때의 배경색 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+.bottom-toolbar {
+  width: 390px;
+  margin: 0 auto;
+  height: 64px;
+  background: #f0f2f5;
+  text-align: center;
+}
+
+.bottom-toolbar-icon {
+  font-size: 24px;
+}
+
+.bottom-toolbar-text {
+  margin-top: 4px;
+}
+
+.link {
+  color: blue;
+  text-decoration: none;
+}
+
+.active-link {
+  color: red;
+}
+
+/* ---------------------------------------
+    6 - Reservation Detail Top Style
+-----------------------------------------*/
+
+/*class*/
+.detail-class-top {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e6e6ed;
+  margin-bottom: 1.25rem;
+}
+
+.btm {
+  padding-bottom: 30px;
+}
+
+.detail-class-top .left {
+  display: flex;
+  align-items: center;
+}
+
+.detail-class-top .left p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #161616;
+}
+
+.detail-class-top .left .manager {
+  margin-left: 5px;
+}
+.detail-class-top .left .profile {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.detail-class-top .left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-class-top .left p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #161616;
+}
+
+.class-btm-tit {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #3e3e40;
+  padding-bottom: 8px;
+  text-align: left;
+}
+
+.cont {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #161616;
+  white-space: pre-line;
+  word-break: break-all;
+  padding-bottom: 1.25rem;
+}
+
+.cancle-box {
+  background: #f6f6f6;
+  border-radius: 4px;
+  padding: 1rem 0.75rem;
+}
+
+.cancle-box .cancle-tit {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: 3e3e40;
+  padding-bottom: 0.75rem;
+}
+
+.cancle-con .con-li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.25rem;
+  height: 15px;
+}
+
+.cancle-con .con-li .tit {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+  padding-right: 0.5rem;
+}
+
+.cancle-con .con-li .time {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+.cancle-con .con-li .time span {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #3e3e40;
+}
+
+.cancle-box .cancle-button {
+  padding-top: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cancle-box button {
+  border-radius: 5px;
+  border: 0.5px solid #b1b1b3;
+  padding: 10px;
+  width: 300px;
+  background-color: #ffffff;
+}
+
+/* ---------------------------------------
+    7 - Reservation Detail List Style
+-----------------------------------------*/
+
+.detail-my-rv {
+  position: relative;
+  flex-grow: 1;
+  background-color: #fff;
+}
+
+.detail-rv-item {
+  margin-top: 25px;
+  border-bottom: 1px solid #e6e6ed;
+}
+
+.detail-rv-item .item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.detail-rv-item .item-top .time {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  color: #3e3e40;
+}
+
+.detail-rv-item .item-top .time span {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  color: #586bff;
+}
+
+.detail-rv-item .item-top .wait-chip {
+  min-width: 4.0625rem;
+  height: 1.5rem;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+}
+
+.detail-rv-item .wait-chip p {
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1;
+  margin: 0;
+}
+
+.detail-rv-item .detail-gray-card {
+  background: #f6f6f6;
+  border-radius: 4px;
+  padding: 0.75rem;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.detail-rv-item .detail-gray-card .class-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #3e3e40;
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+
+.detail-rv-item .detail-gray-card .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-rv-item .detail-gray-card .rv-info {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+.detail-rv-item .detail-gray-card .bottom .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+
+.detail-rv-item .detail-gray-card .manager {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #3e3e40;
+}
+
+.detail-rv-item .detail-gray-card .profile {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.detail-rv-item .detail-gray-card .profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-rv-item .detail-gray-card .manager {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+/* ---------------------------------------
+     8 - Login Style
+-----------------------------------------*/
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f7ff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.login-page > img {
+  width: 200px;
+  margin-bottom: 1rem;
+  margin-top: -25rem;
+}
+
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-con {
+  width: 300px;
+}
+
+.login-input {
+  margin-bottom: 10px;
+}
+
+.login-input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #ededed inset;
+  box-shadow: 0 0 0px 1000px #e8e8e8 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.login-page .login-form .linkarea {
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.login-submit {
+  padding: 15px;
+  width: 100%;
+  background-color: #6f61f7;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 80px;
+  align-items: center;
+}
+.login-submit:hover {
+  background-color: #6f61f7;
+}
+
+/*모달 스타일*/
+
+.passwordmd .ant-modal-content {
+  flex-direction: column;
+  height: 220px;
+  display: block;
+}
+
+.passwordmd .ant-modal-content Input {
+  width: 90%;
+  margin-top: 30px;
+}
+
+.passwordmd .ant-modal-footer {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  margin-bottom: 20px;
+}
+
+.passwordmd .ant-modal-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*회원가입 페이지*/
+.join-page img {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 25px 10px 10px 10px;
+  margin-top: 20px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.join-labal {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+.join-input {
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.join-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.join-button {
+  padding: 12px;
+  width: 100%;
+  background-color: #6f61f7;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 50px;
+  align-items: center;
+}
+.join-button:hover {
+  background-color: #6f61f7;
+}
+
+/* ---------------------------------------
+     9 - Tab Section 
+-----------------------------------------*/
+
+.tab-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  width: 100%;
+}
+
+.tab-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: 0.3px solid #d9d9d9;
+}
+
+.tab-buttons button {
+  background-color: transparent;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 14px;
+  color: #dbdbe0;
+  cursor: pointer;
+  outline: none;
+  width: 130px;
+}
+
+.tab-buttons button.active {
+  color: #0066ff;
+  border-bottom: 2px solid #0066ff;
+  font-weight: bold;
+}
+
+.tab-contents {
+  width: 100%;
+}
+
+/* ---------------------------------------
+     10 - Ticket Info Page
+-----------------------------------------*/
+
+.history-item {
+  padding: 1rem 1rem 1.25rem 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e6e6ed;
+}
+
+.history-item .wait-chip {
+  width: 4.0625rem;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.history-item .wait-chip p {
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1;
+}
+
+.history-item .history-tit {
+  font-size: 16px;
+  line-height: 1.5625rem;
+  font-weight: bold;
+  color: #161616;
+  padding-bottom: 0.5rem;
+}
+
+.history-item .ticket {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+  padding-bottom: 16px;
+}
+
+.history-item .box-min {
+  margin-bottom: 1rem;
+  background: #f6f6f6;
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+.history-item .box-min li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 4px;
+}
+
+.history-item .box-min li .tit {
+  min-width: 3.3125rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+.history-item .box-min li .date {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #161616;
+  padding-left: 0.5rem;
+}
+
+.df li {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+  padding-bottom: 0.5rem;
+}
+
+.df li p {
+  margin-left: 10px;
+}
+
+/*센터 정보*/
+.center-info {
+  padding-top: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 40px;
+}
+
+.center-info .tit {
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+  font-weight: 400;
+  color: #161616;
+  padding-bottom: 0.75rem;
+}
+.center-info .con-txt {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #161616;
+  white-space: pre-line;
+  word-break: keep-all;
+  padding-bottom: 0.75rem;
+}
+
+.center-info .box {
+  background: #f7f7f9;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.center-info .box p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #3e3e40;
+  padding-bottom: 0.25rem;
+}
+
+.center-info .box p.adress {
+  margin-bottom: 0;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.center-info .box img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+/* ---------------------------------------
+     10 - My Info Page
+-----------------------------------------*/
+
+.myinfo-wrap {
+  margin: 60px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: 100vh;
+}
+
+.myinfo .profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.myinfo .profile .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.myinfo .profile img {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.myinfo .profile .left .pf-info {
+  padding-left: 0.5rem;
+}
+
+.myinfo .profile .left .pf-info .name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: var(--ion-color-step-100);
+}
+
+.myinfo .profile .left .pf-info .info {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+.myinfo .profile .right img {
+  width: 20px;
+  height: 20px;
+}
+
+.myinfo .item-list {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: block;
+  contain: content;
+  list-style-type: none;
+  border-bottom: 1px solid #e6e6ed;
+}
+
+.myinfo .item-list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #e6e6ed;
+}
+
+/* ---------------------------------------
+     12 - My Info Footer Style
+-----------------------------------------*/
+
+footer {
+  max-width: 390px;
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  background: #efeff4;
+  padding-bottom: 40px;
+}
+
+.myinfo > footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+footer .footer-wrap {
+  max-width: 390px;
+  padding: 1rem;
+}
+
+.footer-title {
+  width: 100%;
+
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  color: #68686c;
+  padding-bottom: 4px;
+}
+
+.footer-title ul {
+  padding-bottom: 0.5rem;
+}
+
+footer ul li {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #68686c;
+}
+
+/* ---------------------------------------
+     13 - Profile Page Style
+-----------------------------------------*/
+
+.myprofile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1rem 2.5rem 1rem;
+}
+
+.myprofile .profile img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.myprofile .name {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #161616;
+  text-align: center;
+}
+
+.myprofile .email {
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #68686c;
+  text-align: center;
+}
+
+.border-btm {
+  width: 100%;
+  height: 8px;
+  border-top: 1px solid #e6e6ed;
+  background-color: #f7f7f9;
+}
+
+.phone-nm {
+  padding: 1.25rem 1rem;
+}
+
+.phone-nm .input-wrap {
+  width: 100%;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.phone-nm .input-wrap label {
+  width: 100%;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  color: #161616;
+  padding-bottom: 0.5rem;
+}
+
+.phone-nm .input-wrap input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #ceced4;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.phone-nm .input-wrap Button {
+  position: absolute;
+  right: 0;
+  margin-top: 10px;
+}

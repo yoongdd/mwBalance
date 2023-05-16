@@ -1,0 +1,75 @@
+/* Reset.css */
+
+/* Reset box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+figure,
+figcaption,
+blockquote,
+textarea,
+fieldset,
+legend,
+input,
+button,
+select,
+option {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset font styles */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Reset list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset form styles */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Reset hyperlink styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset button styles */
+button {
+  cursor: pointer;
+}
